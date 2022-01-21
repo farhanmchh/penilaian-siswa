@@ -39,7 +39,8 @@
       <div id="login_siswa" style="display: none">
         <strong>Login Siswa</strong>
         <br>
-        <form action="login_siswa.php" method="POST">
+        <form action="/login_siswa" method="POST">
+          @csrf
           <table>
             <tr>
               <td width="25%"><strong>NIS</strong></td>
@@ -59,7 +60,8 @@
       <div id="login_guru" style="display: none">
         <strong>Login Guru</strong>
         <br>
-        <form action="login_guru.php" method="POST">
+        <form action="/login_guru" method="POST">
+          @csrf
           <table>
             <tr>
               <td width="25%"><strong>NIP</strong></td>
@@ -79,7 +81,8 @@
       <div id="login_admin" style="display: none">
         <strong>Login Admin</strong>
         <br>
-        <form action="login_admin.php" method="POST">
+        <form action="/login_admin" method="POST">
+          @csrf
           <table>
             <tr>
               <td width="25%"><strong>Kode Admin</strong></td>
@@ -97,8 +100,6 @@
       </div>
     </fieldset>
   </div>
-
-  
 
   <div class="kanan">
     <center>

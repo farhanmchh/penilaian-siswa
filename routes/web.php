@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [IndexController::class, 'index']);
-
-// Route::get('/', function () {
-//   return 'Hello World!';
-// });
+Route::post('/login_admin', [IndexController::class, 'loginAdmin']);
+Route::post('/login_guru', [IndexController::class, 'loginGuru']);
+Route::post('/login_siswa', [IndexController::class, 'loginSiswa']);
+Route::get('/main', [IndexController::class, 'main']);
