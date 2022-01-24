@@ -13,4 +13,9 @@ class Siswa extends Model
   protected $fillable = ['nis', 'nama_siswa', 'jk', 'alamat', 'id_kelas', 'password'];
   protected $primaryKey = 'nis';
   public $timestamps = false;
+
+  public function kelas()
+  {
+    return $this->belongsTo(Kelas::class, 'id_kelas');
+  }
 }

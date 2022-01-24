@@ -31,7 +31,11 @@ class IndexController extends Controller
       return back();
     }
 
-    dd('admin berhasil login');
+    session([
+      'role' => 'admin'
+    ]);
+
+    return redirect('/main');
   }
 
   public function loginGuru(Request $request)
@@ -46,7 +50,11 @@ class IndexController extends Controller
       return back();
     }
 
-    dd('guru berhasil login');
+    session([
+      'role' => 'guru'
+    ]);
+
+    return redirect('/main');
   }
 
   public function loginSiswa(Request $request)
@@ -60,6 +68,10 @@ class IndexController extends Controller
     if ($siswa->password != $request->password) {
       return back();
     }
+
+    session([
+      'role' => 'siswa'
+    ]);
 
     dd('siswa berhasil login');
   }
