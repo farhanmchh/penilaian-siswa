@@ -1,7 +1,6 @@
 @extends('layout/main')
 
 @section('content')
-
   <center>
     <h2>Data Mengajar</h2>
 
@@ -29,5 +28,4 @@
       @endforeach
     </table>
   </center>
-
 @endsection

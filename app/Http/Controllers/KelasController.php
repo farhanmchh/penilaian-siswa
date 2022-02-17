@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Jurusan;
 use App\Models\Kelas;
+use App\Models\Siswa;
+use App\Models\Mengajar;
+
 use Illuminate\Http\Request;
 
 class KelasController extends Controller
@@ -56,6 +59,17 @@ class KelasController extends Controller
 
   public function destroy($id)
   {
+    $siswa = Siswa::where('id_kelas', $id)->first();
+    $mengajar = Mengajar::where('id_kelas', $id)->first();
+
+    if ($mengajar) {
+      return back()->with('error', 'Data kelas masih digunakan di menu mengajar!');
+    }
+
+    if ($siswa) {
+      return back()->with('error', 'Data kelas masih digunakan di menu siswa!');
+    }
+    
     Kelas::where('id_kelas', $id)->delete();
 
     return back();

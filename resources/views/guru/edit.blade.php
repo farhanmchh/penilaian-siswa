@@ -3,7 +3,7 @@
 @section('content')
 
   <center>
-    <h2>Tambah Data Guru</h2>
+    <h2>Edit Data Guru</h2>
 
     <form action="/guru/update/{{ $guru->nip }}" method="POST">
       @csrf

@@ -7,6 +7,10 @@
 
     <a href="/jurusan/create" class="button">Tambah Data Jurusan</a>
 
+    @if (session('error'))
+      <p style="color: red">{{ session('error') }}</p>
+    @endif
+
     <table border="1" cellpadding="10" cellspacing="0">
       <tr>
         <th>No</th>

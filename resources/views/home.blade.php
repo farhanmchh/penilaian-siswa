@@ -3,7 +3,7 @@
 @section('content')
 
   <center>
-    <h1>Selamat datang user</h1>
+    <h1>Selamat datang {{ session('role') }}</h1>
   </center>
 
 @endsection

@@ -9,6 +9,7 @@
 
     <table border="1" cellpadding="10" cellspacing="0">
       <tr>
+        <th>No</th>
         <th>NIS</th>
         <th>Nama Siswa</th>
         <th>Jenis Kelamin</th>
@@ -19,6 +20,7 @@
       </tr>
       @foreach ($siswa as $s)
         <tr>
+          <td>{{ $loop->iteration }}</td>
           <td>{{ $s->nis }}</td>
           <td>{{ $s->nama_siswa }}</td>
           <td>{{ $s->jk == 'L' ? 'Laki-laki' : 'Perempuan' }}</td>

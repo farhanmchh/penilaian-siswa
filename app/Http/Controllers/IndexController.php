@@ -51,7 +51,8 @@ class IndexController extends Controller
     }
 
     session([
-      'role' => 'guru'
+      'role' => 'guru',
+      'nip' => strval($guru->nip)
     ]);
 
     return redirect('/main');
@@ -73,7 +74,7 @@ class IndexController extends Controller
       'role' => 'siswa'
     ]);
 
-    dd('siswa berhasil login');
+    return redirect('/main');
   }
 
   public function logout(Request $request)

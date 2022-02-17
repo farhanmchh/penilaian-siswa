@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Models\Guru;
+use App\Models\Mengajar;
+
 use Illuminate\Http\Request;
 
 class GuruController extends Controller
@@ -16,7 +18,7 @@ class GuruController extends Controller
 
   public function create()
   {
-    return view('guru/create');
+    return view('guru.create');
   }
 
   public function store(Request $request)
@@ -58,6 +60,12 @@ class GuruController extends Controller
 
   public function destroy($nip)
   {
+    $mengajar = Mengajar::where('nip', $nip)->first();
+
+    if ($mengajar) {
+      return back()->with('error', 'Data guru masih digunakan di menu mengajar!');
+    }
+
     Guru::where('nip', $nip)->delete();
 
     return back();

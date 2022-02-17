@@ -6,6 +6,7 @@ use App\Models\Guru;
 use App\Models\Kelas;
 use App\Models\Mapel;
 use App\Models\Mengajar;
+
 use Illuminate\Http\Request;
 
 class MengajarController extends Controller
@@ -20,7 +21,6 @@ class MengajarController extends Controller
   public function create()
   {
     return view('mengajar/create', [
-      'mengajar' => Mengajar::all(),
       'guru' => Guru::all(),
       'mapel' => Mapel::all(),
       'kelas' => Kelas::all()
@@ -58,7 +58,7 @@ class MengajarController extends Controller
       'id_kelas' => ['required']
     ]);
 
-    Mengajar::updateOrCreate(['id_mengajar' => $id], $data_mengajar);
+    Mengajar::where('id_mengajar', $id)->update($data_mengajar);
 
     return redirect('/mengajar/index');
   }

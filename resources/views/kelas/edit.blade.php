@@ -30,7 +30,7 @@
         <tr>
           <td width="25%" colspan="2">
             <center>
-              <button type="submit" class="button">Tambah</button>
+              <button type="submit" class="button">Edit</button>
             </center>
           </td>
         </tr>

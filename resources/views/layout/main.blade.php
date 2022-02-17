@@ -18,6 +18,7 @@
   <div class="menu">
     <b>
       <a href="/main" class="active">Home</a>
+      <a href="/nilai/index">Data Nilai</a>
       <a href="/guru/index">Data Guru</a>
       <a href="/jurusan/index">Data Jurusan</a>
       <a href="/kelas/index">Data Kelas</a>

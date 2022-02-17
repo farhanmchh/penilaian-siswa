@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Jurusan;
+use App\Models\Kelas;
 use Illuminate\Http\Request;
 
 class JurusanController extends Controller
@@ -50,6 +51,12 @@ class JurusanController extends Controller
 
   public function destroy($id)
   {
+    $kelas = Kelas::where('id_jurusan', $id)->first();
+
+    if ($kelas) {
+      return back();
+    }
+
     Jurusan::where('id_jurusan', $id)->delete();
 
     return back();

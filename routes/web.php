@@ -7,6 +7,8 @@ use App\Http\Controllers\KelasController;
 use App\Http\Controllers\SiswaController;
 use App\Http\Controllers\MapelController;
 use App\Http\Controllers\MengajarController;
+use App\Http\Controllers\NilaiController;
+
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -24,8 +26,8 @@ Route::get('/', [IndexController::class, 'index']);
 Route::post('/login_admin', [IndexController::class, 'loginAdmin']);
 Route::post('/login_guru', [IndexController::class, 'loginGuru']);
 Route::post('/login_siswa', [IndexController::class, 'loginSiswa']);
-Route::get('/main', [IndexController::class, 'main']);
 Route::get('/logout', [IndexController::class, 'logout']);
+Route::get('/main', [IndexController::class, 'main']);
 
 Route::prefix('guru')->group(function () {
   Route::get('/index', [GuruController::class, 'index']);
@@ -58,9 +60,9 @@ Route::prefix('siswa')->group(function () {
   Route::get('/index', [SiswaController::class, 'index']);
   Route::get('/create', [SiswaController::class, 'create']);
   Route::post('/store', [SiswaController::class, 'store']);
-  Route::get('/edit/{nis}', [SiswaController::class, 'edit']);
-  Route::post('/update/{nis}', [SiswaController::class, 'update']);
-  Route::get('/destroy/{nis}', [SiswaController::class, 'destroy']);
+  Route::get('/edit/{id}', [SiswaController::class, 'edit']);
+  Route::post('/update/{id}', [SiswaController::class, 'update']);
+  Route::get('/destroy/{id}', [SiswaController::class, 'destroy']);
 });
 
 Route::prefix('mapel')->group(function () {
@@ -79,4 +81,13 @@ Route::prefix('mengajar')->group(function () {
   Route::get('/edit/{id}', [MengajarController::class, 'edit']);
   Route::post('/update/{id}', [MengajarController::class, 'update']);
   Route::get('/destroy/{id}', [MengajarController::class, 'destroy']);
+});
+
+Route::prefix('nilai')->group(function () {
+  Route::get('/index', [NilaiController::class, 'index']);
+  Route::get('/create', [NilaiController::class, 'create']);
+  Route::post('/store', [NilaiController::class, 'store']);
+  Route::get('/edit/{id}', [NilaiController::class, 'edit']);
+  Route::post('/update/{id}', [NilaiController::class, 'update']);
+  Route::get('/destroy/{id}', [NilaiController::class, 'destroy']);
 });

@@ -1,9 +1,12 @@
 @extends('layout/main')
 
 @section('content')
-
   <center>
     <h2>Data Guru</h2>
+
+    @if (session('error'))
+      <p style="color: red">{{ session('error') }}</p>
+    @endif
 
     <a href="/guru/create" class="button">Tambah data guru</a>
 
@@ -33,5 +36,4 @@
       @endforeach
     </table>
   </center>
-
 @endsection

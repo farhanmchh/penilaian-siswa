@@ -5,6 +5,10 @@
   <center>
     <h2>Data Mapel</h2>
 
+    @if (session('error'))
+      <p style="color: red">{{ session('error') }}</p>
+    @endif
+
     <a href="/mapel/create" class="button">Tambah Data Mapel</a>
 
     <table border="1" cellpadding="10" cellspacing="0">
